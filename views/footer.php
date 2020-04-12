@@ -7,22 +7,22 @@
                     <h3 class="text-white font-weight-bold mb-3">Categories</h3>
                     <ul>
                       <li class="mb-3">
-                        <a href="product.html">Laptop </a>
+                        <a href="showproducts.php?catId=1">Laptop </a>
                       </li>
                       <li class="mb-3">
-                        <a href="product.html">Desktop</a>
+                        <a href="showproducts.php?catId=2">Desktop</a>
                       </li>
                       <li class="mb-3">
-                        <a href="product.html">Camera</a>
+                        <a href="showproducts.php?catId=4">Camera</a>
                       </li>
                       <li class="mb-3">
-                        <a href="product2.html">Smartphones</a>
+                        <a href="showproducts.php?catId=3">Smartphones</a>
                       </li>
                       <li class="mb-3">
-                        <a href="product.html">Accessories</a>
+                        <a href="showproducts.php?catId=10">Accessories</a>
                       </li>
                       <li>
-                        <a href="product2.html">Pc Component</a>
+                        <a href="showproducts.php?catId=9">Pc Component</a>
                       </li>
                     </ul>
                   </div>

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>i Shop BD</title>
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
@@ -85,14 +85,14 @@
                         <div style="width: 100%;">                            
                             <div class="form_group">
                                 <span class="lebel">Address</span>
-                                <textarea class="input100" name="address" id="address" autocomplete="off" onblur="validate(this)" required placeholder="Enter Your Pressent Address"></textarea><br>
+                                <textarea class="input100" name="address" id="address" autocomplete="off" onblur="validate(this)" placeholder="Enter Your Pressent Address"></textarea><br>
                             </div>
                             <div class="msg"></div>
                         </div>
                         <div style="width: 100%;"> 
                             <div class="form_group">
                                 <span class="lebel">Zip Code</span>
-                                <input class="input100" id="zip" type="text" name="zip" autocomplete="off" onkeyup="validate(this)" required placeholder="Enter Your Area Zip Code">
+                                <input class="input100" id="zip" type="text" name="zip" autocomplete="off" onkeyup="validate(this)" placeholder="Enter Your Area Zip Code">
                                 <br>
                             </div>
                             <div class="msg"></div>
@@ -100,7 +100,7 @@
                         <div style="width: 100%;"> 
                             <div class="form_group">
                                 <span class="lebel">Phone Number</span>
-                                <input class="input100" id="phone" type="text" name="phone" autocomplete="off" onkeyup="validate(this)" required placeholder="Enter Phone Number">
+                                <input class="input100" id="phone" type="text" name="phone" autocomplete="off" onkeyup="validate(this)" placeholder="Enter Phone Number">
                                 <br>
                             </div>
                             <div class="msg"></div>

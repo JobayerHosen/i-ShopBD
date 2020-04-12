@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>i Shop BD</title>
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
@@ -164,7 +164,7 @@
                                         </tbody>
                         </table>
                         <br>
-                        <input type="submit" name="order" value="Submit Order" style="float: right;" class="btn btn-lg btn-success">
+                        <input type="submit" name="order" onclick="alert('Are you sure you want to confirm the order?')" value="Submit Order" style="float: right;" class="btn btn-lg btn-success">
                         <div style="content: '';clear: both;display: block" class="clear-fix"></div>
                         </form>
                     </div>

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>i Shop BD</title>
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
@@ -116,7 +116,7 @@
                                         </tbody>
                         </table>
                         <br>
-                        <a style="float: right;" href="order.php" class="btn btn-lg btn-success">Check Out</a>
+                        <a style="float: right;" href="reviewinfo.php?uid=<?php echo $uid?>" class="btn btn-lg btn-success">Check Out</a>
                         <div style="content: '';clear: both;display: block" class="clear-fix"></div>
                     </div>
                  </div>    

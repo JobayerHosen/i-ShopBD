@@ -1,9 +1,9 @@
-﻿-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2019 at 02:44 AM
+-- Generation Time: Dec 03, 2019 at 11:30 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -91,7 +91,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cart_id`, `cart_user_id`, `cart_product_id`, `cart_quantity`) VALUES
-(10, 201, 21, 2);
+(9, 201, 21, 2),
+(10, 201, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -143,10 +144,17 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `order_user_id`, `order_ship_address`, `oder_city`, `oder_zip`, `order_phone`, `order_date`, `order_shiped`, `order_tracking_number`, `order_completed`, `order_payment_method_id`) VALUES
+(1, 201, '', '', NULL, NULL, '2019-09-06 05:29:48', 0, NULL, 0, 2),
 (21, 201, '', '', NULL, NULL, '2019-07-23 22:27:36', 0, NULL, 0, NULL),
 (22, 201, '', '', NULL, NULL, '2019-07-23 22:28:28', 0, NULL, 0, NULL),
 (23, 201, '', '', NULL, NULL, '2019-07-23 22:36:44', 0, NULL, 0, NULL),
-(24, 201, '', '', NULL, NULL, '2019-07-24 00:38:30', 0, NULL, 0, 2);
+(24, 201, '', '', NULL, NULL, '2019-07-24 00:38:30', 0, NULL, 0, 2),
+(29, 0, '', '', NULL, NULL, '2019-11-29 18:47:09', 0, NULL, 0, 2),
+(30, 0, '', '', NULL, NULL, '2019-12-02 14:41:04', 0, NULL, 0, 2),
+(31, 0, '', '', NULL, NULL, '2019-12-02 18:31:10', 0, NULL, 0, 2),
+(32, 201, '', '', NULL, NULL, '2019-12-02 18:32:36', 0, NULL, 0, 2),
+(33, 201, '', '', NULL, NULL, '2019-12-02 18:39:29', 0, NULL, 0, 2),
+(34, 201, '', '', NULL, NULL, '2019-12-02 18:39:59', 0, NULL, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -166,6 +174,7 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`order_item_id`, `orders_order_id`, `products_product_id`, `product_quantity`) VALUES
+(1, 0, 21, 2),
 (25, 21, 15, 1),
 (26, 21, 10, 1),
 (27, 21, 18, 1),
@@ -178,7 +187,18 @@ INSERT INTO `order_items` (`order_item_id`, `orders_order_id`, `products_product
 (34, 23, 10, 1),
 (35, 23, 18, 2),
 (36, 23, 8, 1),
-(37, 24, 21, 2);
+(37, 24, 21, 2),
+(38, 29, 7, 1),
+(39, 30, 7, 1),
+(40, 30, 15, 1),
+(41, 30, 18, 1),
+(42, 31, 18, 1),
+(43, 32, 18, 1),
+(44, 33, 18, 1),
+(45, 33, 15, 1),
+(46, 33, 11, 1),
+(47, 33, 21, 1),
+(48, 34, 21, 2);
 
 -- --------------------------------------------------------
 
@@ -199,10 +219,17 @@ CREATE TABLE `payments` (
 --
 
 INSERT INTO `payments` (`payment_id`, `payment_order_id`, `payment_amount`, `payment_completed`, `payment_date`) VALUES
+(1, 0, 97100, 0, NULL),
 (3, 21, 317100, 0, NULL),
 (4, 22, 317100, 0, NULL),
 (5, 23, 372100, 0, NULL),
-(6, 24, 32100, 0, NULL);
+(6, 24, 32100, 0, NULL),
+(7, 29, 50100, 0, NULL),
+(8, 30, 170100, 0, NULL),
+(9, 31, 55100, 0, NULL),
+(10, 32, 55100, 0, NULL),
+(11, 33, 287100, 0, NULL),
+(12, 34, 32100, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -353,6 +380,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `email`, `first_name`, `last_name`, `pwd`, `zip_code`, `address`, `active`, `phone`) VALUES
+(0, 'jobaierhosen.4314@gmail.com', 'J', 'H ', '$2y$10$Ry8vgtjmdO140LJonM27meK2zmisbLy0OjIIXC.30MElyLp.m8Eki', 4314, 'Kumira, Chittagong.', 0, '01851838044'),
 (1, 'kelsi89@example.com', 'Zachary', 'Green', '4', 61001, '9762 Emard Squares\nNorth Ervinburgh, MN 30437-6143', 1, '(972)541-3589'),
 (2, 'dtorphy@example.com', 'Zion', 'Lockman', '', 4726, '8251 Keebler Key\nWest Vestatown, AR 14140', 0, '+12(9)2133398512'),
 (3, 'keebler.carlos@example.org', 'Agnes', 'Paucek', '3', 91007, '4566 Sharon Keys Suite 514\nKayleeberg, OH 82493-7795', 0, '697.204.9588x99389'),
@@ -553,7 +581,7 @@ INSERT INTO `users` (`user_id`, `email`, `first_name`, `last_name`, `pwd`, `zip_
 (198, 'zcruickshank@example.org', 'Faye', 'Orn', '7', 48263, '498 Oleta Neck Suite 379\nPort Adella, AL 12637', 0, '695.653.4553x9477'),
 (199, 'padberg.carley@example.org', 'Richie', 'Toy', '1', 73183, '740 Schmitt Squares\nSouth Averybury, MI 57185', 1, '405.314.7822'),
 (200, 'curt.johns@example.net', 'Everett', 'Gleichner', '3', 27806, '021 Simonis Path Suite 898\nNoraview, SD 41785-0151', 1, '846.611.6323x40986'),
-(201, 'juba2732@gmail.com', 'Jobayer', 'Hosen', '$2y$10$uiyENeDD.HBcKhRS/KUMXO8mVLHRjm9.kEJhqZhaCZcBwSejNG0ja', 4314, 'Maolana Abdul Mannan er Bari, Courtpara, Kumira (4314), Sitakunda, Chittagong, Banngladesh.', 1, '01851838044'),
+(201, 'juba2732@gmail.com', 'Jobayer', 'Hosen      ', '$2y$10$uiyENeDD.HBcKhRS/KUMXO8mVLHRjm9.kEJhqZhaCZcBwSejNG0ja', 4314, 'Maolana Abdul Mannan er Bari, Courtpara, Kumira (4314), Sitakunda, Chittagong, Banngladesh.', 1, '01851838044'),
 (202, 'a@gmail.com', 'slfjs', 'aslfjs', 'slfjsalfjsf', 4314, 'sdfjosifjdsiofjsfpoijfoi\r\nsldkfj', 1, '430685760'),
 (203, 'juba@gmail.com', 'md', 'juba', '$2y$10$Bmrb.mOgSNgOHnd/9iOOJu8haSI57st4Ghsjc3ij.Ah554UQxJium', 4314, 'chittagong', NULL, '01851838044');
 
@@ -699,105 +727,19 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `payment_method`
---
-ALTER TABLE `payment_method`
-  MODIFY `payment_method_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
---
--- AUTO_INCREMENT for table `product_images`
---
-ALTER TABLE `product_images`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-
---
--- AUTO_INCREMENT for table `pruduct_catagory`
---
-ALTER TABLE `pruduct_catagory`
-  MODIFY `product_catagory_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=204;
-
---
--- AUTO_INCREMENT for table `user_verification`
---
-ALTER TABLE `user_verification`
-  MODIFY `hash_id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `cart`
---
-ALTER TABLE `cart`
-  ADD CONSTRAINT `fk_cart_has_product` FOREIGN KEY (`cart_product_id`) REFERENCES `products` (`product_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_cart_has_user` FOREIGN KEY (`cart_user_id`) REFERENCES `users` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `orders`
---
-ALTER TABLE `orders`
-  ADD CONSTRAINT `fk_order_payment_method_id` FOREIGN KEY (`order_payment_method_id`) REFERENCES `payment_method` (`payment_method_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_order_user_id` FOREIGN KEY (`order_user_id`) REFERENCES `users` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `order_items`
---
-ALTER TABLE `order_items`
-  ADD CONSTRAINT `fk_orders_has_products_orders1` FOREIGN KEY (`orders_order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_orders_has_products_products1` FOREIGN KEY (`products_product_id`) REFERENCES `products` (`product_id`) ON UPDATE NO ACTION;
-
---
--- Constraints for table `payments`
---
-ALTER TABLE `payments`
-  ADD CONSTRAINT `fk_payment_order_id` FOREIGN KEY (`payment_order_id`) REFERENCES `orders` (`order_id`) ON DELETE SET NULL ON UPDATE CASCADE;
-
---
--- Constraints for table `products`
---
-ALTER TABLE `products`
-  ADD CONSTRAINT `fk_products_brands1` FOREIGN KEY (`product_brand_id`) REFERENCES `brands` (`brand_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_products_pruduct_catagory1` FOREIGN KEY (`product_catagory_id`) REFERENCES `pruduct_catagory` (`product_catagory_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `product_images`
---
-ALTER TABLE `product_images`
-  ADD CONSTRAINT `fk_img_product_id` FOREIGN KEY (`img_product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `user_verification`
---
-ALTER TABLE `user_verification`
-  ADD CONSTRAINT `fk_user_has_hash` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

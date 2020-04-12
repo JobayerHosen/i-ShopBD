@@ -13,7 +13,7 @@
 
 
     //Checking if any fild is Empty
-    if (empty($address) || empty($first) || empty($last) || empty($email) || empty($pwd) || empty($zip) || empty($phone)) {
+    if (empty($first) || empty($last) || empty($email) || empty($pwd)) {
         header("Location: ../signup.php?signup=empty");
         exit();
         

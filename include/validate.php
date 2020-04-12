@@ -46,7 +46,7 @@
         // Validate Address--- 
         if ($_GET['input'] == 'address') {
             $address = htmlspecialchars($_GET['value']);
-            if (strlen($address) < 10) {
+            if (strlen($address) < 10 && strlen($address) > 0) {
                 echo '<div class="alert alert-danger" role="alert">Enter Valid Address.</div>';
                 exit();
             }
